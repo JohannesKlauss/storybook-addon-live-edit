@@ -1,7 +1,7 @@
 {
-  "name": "storybook-addon-kit",
+  "name": "storybook-addon-live-edit",
   "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "description": "Addon that allows you to live edit the component source inside Storybook",
   "keywords": [
     "storybook-addons",
     "style",
@@ -9,9 +9,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/JohannesKlauss/storybook-addon-live-edit"
   },
-  "author": "winkerVSbecks",
+  "author": "Johannes Klauss",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -60,12 +60,16 @@
     "typescript": "^4.2.4",
     "zx": "^1.14.1"
   },
+  "dependencies": {
+    "@storybook/source-loader": "6.3.0",
+    "react-live": "^2.2.3"
+  },
   "peerDependencies": {
-    "@storybook/addons": "^6.2.9",
-    "@storybook/api": "^6.2.9",
-    "@storybook/components": "^6.2.9",
-    "@storybook/core-events": "^6.2.9",
-    "@storybook/theming": "^6.2.9",
+    "@storybook/addons": "^6.3.0",
+    "@storybook/api": "^6.3.0",
+    "@storybook/components": "^6.3.0",
+    "@storybook/core-events": "^6.3.0",
+    "@storybook/theming": "^6.3.0",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
@@ -81,12 +85,10 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Live Edit",
     "supportedFrameworks": [
-      "react",
-      "vue",
-      "angular"
+      "react"
     ],
-    "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+    "icon": "https://user-images.githubusercontent.com/263385/101991675-48cdf300-3c7c-11eb-9400-58de5ac6daa7.png"
   }
 }
