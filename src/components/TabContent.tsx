@@ -1,20 +1,20 @@
 import React from "react";
 import { styled } from "@storybook/theming";
-import { Title, Link } from "@storybook/components";
+import { Title, Link, Source } from "@storybook/components";
 import { LiveEditParams } from "../types";
-import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
+import MDX from "@mdx-js/runtime";
 
 const TabWrapper = styled.div(({ theme }) => ({
   background: theme.background.content,
   padding: "4rem 20px",
   minHeight: "100vh",
-  boxSizing: "border-box",
+  boxSizing: "border-box"
 }));
 
 const TabInner = styled.div({
   maxWidth: 768,
   marginLeft: "auto",
-  marginRight: "auto",
+  marginRight: "auto"
 });
 
 interface TabContentProps {
@@ -22,7 +22,7 @@ interface TabContentProps {
 }
 
 export const TabContent: React.FC<TabContentProps> = ({ params }) => {
-  console.log('params', params);
+  console.log("params", params);
 
   return (
     <TabWrapper>
@@ -47,9 +47,11 @@ export const TabContent: React.FC<TabContentProps> = ({ params }) => {
           custom UI.
         </p>
 
-        <LiveProvider code="<strong>Hello World!</strong>">
-        </LiveProvider>
+        <MDX>
+
+        </MDX>
+        <Source code={params.sourceCode}/>
       </TabInner>
     </TabWrapper>
-  )
+  );
 };
