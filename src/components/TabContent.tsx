@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from "@storybook/theming";
-import { Title, Source, Link } from "@storybook/components";
-import useStorySource from "../hooks/useStorySource";
+import { Title, Link } from "@storybook/components";
+import { LiveEditParams } from "../types";
+import { LiveEditor, LiveError, LivePreview, LiveProvider } from "react-live";
 
 const TabWrapper = styled.div(({ theme }) => ({
   background: theme.background.content,
@@ -17,16 +18,16 @@ const TabInner = styled.div({
 });
 
 interface TabContentProps {
-  code: string;
+  params: LiveEditParams;
 }
 
-export const TabContent: React.FC<TabContentProps> = ({ code }) => {
-  useStorySource()
+export const TabContent: React.FC<TabContentProps> = ({ params }) => {
+  console.log('params', params);
 
   return (
     <TabWrapper>
       <TabInner>
-        <Title>My Addon</Title>
+        <Title>Live Edit</Title>
         <p>
           Your addon can create a custom tab in Storybook. For example, the
           official{" "}
@@ -45,7 +46,9 @@ export const TabContent: React.FC<TabContentProps> = ({ code }) => {
           <code>&lt;Source /&gt;</code> component below. Or build a completely
           custom UI.
         </p>
-        <Source code={code} language="jsx" format={false} />
+
+        <LiveProvider code="<strong>Hello World!</strong>">
+        </LiveProvider>
       </TabInner>
     </TabWrapper>
   )

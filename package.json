@@ -47,6 +47,9 @@
     "@babel/preset-typescript": "^7.13.0",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@types/babel__generator": "^7.6.2",
+    "@types/estraverse": "^5.1.0",
+    "@types/node": "^15.12.4",
     "auto": "^10.3.0",
     "babel-loader": "^8.1.0",
     "boxen": "^5.0.1",
@@ -61,7 +64,9 @@
     "zx": "^1.14.1"
   },
   "dependencies": {
-    "@storybook/source-loader": "6.3.0",
+    "@babel/generator": "7.14.5",
+    "@babel/parser": "7.14.7",
+    "estraverse": "^5.2.0",
     "react-live": "^2.2.3"
   },
   "peerDependencies": {

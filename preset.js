@@ -22,7 +22,7 @@ function webpack(webpackConfig = {}, options = {}) {
           enforce: 'pre',
           use: [
             {
-              loader: require.resolve('@storybook/source-loader'),
+              loader: require.resolve('./dist/cjs/source-loader/loader.js'),
               options: loaderOptions,
             },
           ],
